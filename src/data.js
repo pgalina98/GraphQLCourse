@@ -82,7 +82,7 @@ export const products = [
   },
 ];
 
-const categories = [
+export const categories = [
   {
     id: "c01b1ff4-f894-4ef2-b27a-22aacc2fca70",
     name: "Kitchen",
