@@ -1,4 +1,4 @@
 export const ProductMutation = {
-  productCreate: (parent, args) => {},
-  prouductUpdate: (parent, args) => {},
+  productCreate: (parent, args, context) => {},
+  prouductUpdate: (parent, args, context) => {},
 };

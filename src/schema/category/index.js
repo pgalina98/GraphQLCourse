@@ -1,3 +1,3 @@
-export { ProductTypes } from "./types.js";
-export { ProductResolvers } from "./resolvers.js";
-export { ProductMutation } from "./mutation";
+export { CategoryTypes } from "./types.js";
+export { CategoryResolvers } from "./resolvers.js";
+export { CategoryMutation } from "./mutation.js";

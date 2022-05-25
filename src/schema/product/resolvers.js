@@ -6,6 +6,7 @@ export const ProductResolvers = {
 
     return products.find((product) => product.id === id);
   },
+
   products: () => {
     return [...products];
   },
