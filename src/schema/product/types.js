@@ -26,5 +26,7 @@ export const ProductTypes = `
     name: String!
     description: String!
     price: Float!
+    quantity: Int!
+    available: Boolean!
   }
 `;
