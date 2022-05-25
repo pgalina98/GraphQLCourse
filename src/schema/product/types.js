@@ -1,7 +1,7 @@
 export const ProductTypes = `
   type Query {
-    product: Product
-    products: [Product]
+    product(id: ID!): Product
+    products: [Product!]!
   } 
 
   input ProductCreateDataInput {
