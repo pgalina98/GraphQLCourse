@@ -28,5 +28,6 @@ export const ProductTypes = `
     price: Float!
     quantity: Int!
     available: Boolean!
+    category: Category!
   }
 `;
