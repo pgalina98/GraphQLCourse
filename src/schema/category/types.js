@@ -24,5 +24,6 @@ export const CategoryTypes = `
   type Category {
     id: ID!
     name: String!
+    products: [Product!]!
   }
 `;
