@@ -6,14 +6,29 @@ export const ProductTypes = `
 
   input ProductCreateDataInput {
     name: String!
+    description: String!
+    price: Float!
+    quantity: Int!
+    available: Boolean!
+    category: ID!
   }
   
   input ProductUpdateDataInput {
     name: String!
+    description: String!
+    price: Float!
+    quantity: Int!
+    available: Boolean!
+    category: ID!
   }
 
   input ProductUpdateWhereInput {
     name: String!
+    description: String!
+    price: Float!
+    quantity: Int!
+    available: Boolean!
+    category: ID!
   }
 
   type Mutation {
