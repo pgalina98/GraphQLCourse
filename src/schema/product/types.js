@@ -44,5 +44,6 @@ export const ProductTypes = `
     quantity: Int!
     available: Boolean!
     category: Category!
+    reviews: [Review!]
   }
 `;

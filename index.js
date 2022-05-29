@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server";
 
 import { typeDefs, resolvers } from "./src/schema/index.js";
-import { products, categories } from "./src/data.js";
+import { products, categories, reviews } from "./src/data.js";
 
 const server = new ApolloServer({
   typeDefs,
@@ -9,6 +9,7 @@ const server = new ApolloServer({
   context: {
     products,
     categories,
+    reviews,
   },
 });
 

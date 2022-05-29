@@ -5,4 +5,11 @@ export const ProductResolvers = {
 
     return categories.find((category) => category.id === categoryId);
   },
+
+  reviews: (parent, args, context) => {
+    const { id: productId } = parent;
+    const { reviews } = context;
+
+    return reviews.filter((review) => review.productId === productId);
+  },
 };
