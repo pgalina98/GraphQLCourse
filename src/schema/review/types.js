@@ -39,6 +39,5 @@ export const ReviewTypes = `
     title: String!
     comment: String!
     rating: Float!
-    product: Product!
   }
 `;
