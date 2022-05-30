@@ -6,7 +6,7 @@ export const ProductTypes = `
 
   input ProductFilterWhereInput {
     available: Boolean
-    averageReviewMark: Float
+    averageReviewRating: Float
   }
 
   input ProductCreateDataInput {
