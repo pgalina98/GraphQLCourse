@@ -1,8 +1,13 @@
 export const ProductTypes = `
   type Query {
     product(id: ID!): Product
-    products: [Product!]!
+    products(where: ProductFilterWhereInput): [Product!]!
   } 
+
+  input ProductFilterWhereInput {
+    available: Boolean
+    averageReviewMark: Float
+  }
 
   input ProductCreateDataInput {
     name: String!
