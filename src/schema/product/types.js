@@ -1,8 +1,24 @@
 export const ProductTypes = `
+  type Product {
+    id: ID!
+    name: String!
+    description: String!
+    price: Float!
+    quantity: Int!
+    available: Boolean!
+    category: Category!
+    reviews: [Review!]
+  }
+
   type Query {
     product(id: ID!): Product
     products(where: ProductFilterWhereInput): [Product!]!
   } 
+
+  type Mutation {
+    productCreate(data: ProductCreateDataInput!): Product
+    productUpdate(data: ProductUpdateDataInput!, where: ProductUpdateWhereInput!): Product 
+  }
 
   input ProductFilterWhereInput {
     available: Boolean
@@ -34,21 +50,5 @@ export const ProductTypes = `
     quantity: Int!
     available: Boolean!
     category: ID!
-  }
-
-  type Mutation {
-    productCreate(data: ProductCreateDataInput!): Product
-    productUpdate(data: ProductUpdateDataInput!, where: ProductUpdateWhereInput!): Product 
-  }
-
-  type Product {
-    id: ID!
-    name: String!
-    description: String!
-    price: Float!
-    quantity: Int!
-    available: Boolean!
-    category: Category!
-    reviews: [Review!]
   }
 `;
