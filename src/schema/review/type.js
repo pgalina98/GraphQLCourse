@@ -34,10 +34,6 @@ export const ReviewType = `
   }
 
   input ReviewUpdateWhereInput {
-    date: String!
-    title: String!
-    comment: String!
-    rating: Float!
-    productId: ID!
+    id: ID!
   }
 `;

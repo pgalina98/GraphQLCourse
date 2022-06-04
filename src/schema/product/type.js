@@ -28,27 +28,24 @@ export const ProductType = `
   input ProductCreateDataInput {
     name: String!
     description: String!
-    price: Float!
     quantity: Int!
+    price: Float!
+    image: String!
     available: Boolean!
-    category: ID!
+    categoryId: ID!
   }
   
   input ProductUpdateDataInput {
     name: String!
     description: String!
-    price: Float!
     quantity: Int!
+    price: Float!
+    image: String!
     available: Boolean!
-    category: ID!
+    categoryId: ID!
   }
 
   input ProductUpdateWhereInput {
-    name: String!
-    description: String!
-    price: Float!
-    quantity: Int!
-    available: Boolean!
-    category: ID!
+    id: ID!
   }
 `;

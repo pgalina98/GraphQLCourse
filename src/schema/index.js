@@ -1,5 +1,10 @@
 import { gql } from "apollo-server-express";
-import { ProductType, ProductQuery, ProductResolver } from "./product/index.js";
+import {
+  ProductType,
+  ProductQuery,
+  ProductMutation,
+  ProductResolver,
+} from "./product/index.js";
 import {
   CategoryType,
   CategoryQuery,
@@ -21,6 +26,7 @@ export const resolvers = {
     ...ReviewQuery,
   },
   Mutation: {
+    ...ProductMutation,
     ...CategoryMutation,
   },
   Product: {

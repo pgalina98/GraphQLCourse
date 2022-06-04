@@ -24,6 +24,6 @@ export const CategoryType = `
   }
 
   input CategoryUpdateWhereInput {
-    name: String!
+    id: ID!
   }
 `;
