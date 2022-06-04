@@ -11,7 +11,12 @@ import {
   CategoryMutation,
   CategoryResolver,
 } from "./category/index.js";
-import { ReviewType, ReviewQuery, ReviewResolver } from "./review/index.js";
+import {
+  ReviewType,
+  ReviewQuery,
+  ReviewMutation,
+  ReviewResolver,
+} from "./review/index.js";
 
 export const typeDefs = gql`
   ${ProductType}
@@ -28,6 +33,7 @@ export const resolvers = {
   Mutation: {
     ...ProductMutation,
     ...CategoryMutation,
+    ...ReviewMutation,
   },
   Product: {
     ...ProductResolver,
