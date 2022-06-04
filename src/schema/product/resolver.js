@@ -1,4 +1,4 @@
-export const ProductResolvers = {
+export const ProductResolver = {
   category: (parent, args, context) => {
     const { categoryId } = parent;
     const { categories } = context;

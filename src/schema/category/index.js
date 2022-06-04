@@ -1,4 +1,4 @@
-export { CategoryTypes } from "./types.js";
-export { CategoryResolvers } from "./resolvers.js";
+export { CategoryType } from "./type.js";
+export { CategoryResolver } from "./resolver.js";
 export { CategoryMutation } from "./mutation.js";
 export { CategoryQuery } from "./query.js";

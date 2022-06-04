@@ -1,20 +1,17 @@
 import { gql } from "apollo-server-express";
+import { ProductType, ProductQuery, ProductResolver } from "./product/index.js";
 import {
-  ProductTypes,
-  ProductQuery,
-  ProductResolvers,
-} from "./product/index.js";
-import {
-  CategoryTypes,
+  CategoryType,
   CategoryQuery,
-  CategoryResolvers,
+  CategoryMutation,
+  CategoryResolver,
 } from "./category/index.js";
-import { ReviewTypes, ReviewQuery, ReviewResolvers } from "./review/index.js";
+import { ReviewType, ReviewQuery, ReviewResolver } from "./review/index.js";
 
 export const typeDefs = gql`
-  ${ProductTypes}
-  ${CategoryTypes}
-  ${ReviewTypes}
+  ${ProductType}
+  ${CategoryType}
+  ${ReviewType}
 `;
 
 export const resolvers = {
@@ -23,13 +20,16 @@ export const resolvers = {
     ...CategoryQuery,
     ...ReviewQuery,
   },
+  Mutation: {
+    ...CategoryMutation,
+  },
   Product: {
-    ...ProductResolvers,
+    ...ProductResolver,
   },
   Category: {
-    ...CategoryResolvers,
+    ...CategoryResolver,
   },
   Review: {
-    ...ReviewResolvers,
+    ...ReviewResolver,
   },
 };

@@ -1,4 +1,4 @@
-export const ReviewTypes = `
+export const ReviewType = `
   type Review {
     id: ID!
     date: String!

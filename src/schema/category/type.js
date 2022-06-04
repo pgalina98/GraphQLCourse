@@ -1,4 +1,4 @@
-export const CategoryTypes = `
+export const CategoryType = `
   type Category {
     id: ID!
     name: String!
@@ -12,7 +12,7 @@ export const CategoryTypes = `
 
   type Mutation {
     categoryCreate(data: CategoryCreateDataInput!): Category
-    categoryUpdate(data: CategoryUpdateDataInput!, where: CategoryUpdateWhereInput!): Category 
+    categoryUpdate(data: CategoryUpdateDataInput!, where: CategoryUpdateWhereInput!): Category
   }
 
   input CategoryCreateDataInput {

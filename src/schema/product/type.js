@@ -1,4 +1,4 @@
-export const ProductTypes = `
+export const ProductType = `
   type Product {
     id: ID!
     name: String!

@@ -1,4 +1,4 @@
-export { ReviewTypes } from "./types.js";
-export { ReviewResolvers } from "./resolvers.js";
+export { ReviewType } from "./type.js";
+export { ReviewResolver } from "./resolver.js";
 export { ReviewMutation } from "./mutation.js";
 export { ReviewQuery } from "./query.js";
