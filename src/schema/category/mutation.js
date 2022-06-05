@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 
 export const CategoryMutation = {
-  categoryCreate: (parent, { data: { name } }, { database }) => {
+  categoryCreate: (parent, { input: { name } }, { database }) => {
     const newCategory = {
       id: uuid(),
       name,
@@ -12,8 +12,6 @@ export const CategoryMutation = {
     return newCategory;
   },
 
-  categoryUpdate: (parent, args, context) => {},
-
   categoryDelete: (parent, { id }, { database }) => {
     database.categories = database.categories.filter(
       (category) => category.id !== id
@@ -23,4 +21,6 @@ export const CategoryMutation = {
 
     return true;
   },
+
+  categoryUpdate: (parent, args, context) => {},
 };

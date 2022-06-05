@@ -1,16 +1,18 @@
 import { v4 as uuid } from "uuid";
 
 export const ProductMutation = {
-  productCreate: (parent, { data }, { database }) => {
+  productCreate: (parent, { input }, { database }) => {
     const newProduct = {
       id: uuid(),
-      ...data,
+      ...input,
     };
 
     database.products.push(newProduct);
 
     return newProduct;
   },
+
+  productUpdate: (parent, args, context) => {},
 
   productDelete: (parent, { id }, { database }) => {
     database.products = database.products.filter(
@@ -23,6 +25,4 @@ export const ProductMutation = {
 
     return true;
   },
-
-  productUpdate: (parent, args, context) => {},
 };
