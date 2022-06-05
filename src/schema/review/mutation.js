@@ -9,7 +9,18 @@ export const ReviewMutation = {
     return newReview;
   },
 
-  reviewUpdate: (parent, args, context) => {},
+  reviewUpdate: (parent, { where: { id }, input }, { database }) => {
+    const index = database.reviews.findIndex((review) => review.id === id);
+
+    const updatedReview = {
+      ...database.reviews[index],
+      ...input,
+    };
+
+    database.reviews[index] = updatedReview;
+
+    return updatedReview;
+  },
 
   reviewDelete: (parent, { id }, { database }) => {
     database.reviews = database.reviews.filter((review) => review.id !== id);

@@ -14,7 +14,7 @@ export const ReviewType = `
 
   type Mutation {
     reviewCreate(input: ReviewCreateDataInput!): Review
-    reviewUpdate(input: ReviewUpdateDataInput!, where: ReviewUpdateWhereInput!): Review
+    reviewUpdate(where: ReviewUpdateWhereInput!, input: ReviewUpdateDataInput!): Review
     reviewDelete(id: ID!): Boolean
   }
 
@@ -27,11 +27,10 @@ export const ReviewType = `
   }
   
   input ReviewUpdateDataInput {
-    date: String!
-    title: String!
-    comment: String!
+    date: String
+    title: String
+    comment: String
     rating: Float!
-    productId: ID!
   }
 
   input ReviewUpdateWhereInput {
