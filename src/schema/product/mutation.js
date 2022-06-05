@@ -12,5 +12,17 @@ export const ProductMutation = {
     return newProduct;
   },
 
+  productDelete: (parent, { id }, { database }) => {
+    database.products = database.products.filter(
+      (product) => product.id !== id
+    );
+
+    database.reviews = database.reviews.filter(
+      (review) => review.productId === id
+    );
+
+    return true;
+  },
+
   productUpdate: (parent, args, context) => {},
 };
