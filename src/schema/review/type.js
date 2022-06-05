@@ -14,7 +14,8 @@ export const ReviewType = `
 
   type Mutation {
     reviewCreate(data: ReviewCreateDataInput!): Review
-    reviewUpdate(data: ReviewUpdateDataInput!, where: ReviewUpdateWhereInput!): Review 
+    reviewUpdate(data: ReviewUpdateDataInput!, where: ReviewUpdateWhereInput!): Review
+    reviewDelete(id: ID!): Boolean
   }
 
   input ReviewCreateDataInput {

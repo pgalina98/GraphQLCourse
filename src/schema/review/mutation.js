@@ -9,5 +9,11 @@ export const ReviewMutation = {
     return newReview;
   },
 
+  reviewDelete: (parent, { id }, { database }) => {
+    database.reviews = database.reviews.filter((review) => review.id !== id);
+
+    return true;
+  },
+
   reviewUpdate: (parent, args, context) => {},
 };
