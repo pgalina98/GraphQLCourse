@@ -1,14 +1,9 @@
 export const CategoryQuery = {
-  category: (parent, args, context) => {
-    const { id } = args;
-    const { categories } = context;
-
-    return categories.find((category) => category.id === id);
+  category: (parent, { id }, { database }) => {
+    return database.categories.find((category) => category.id === id);
   },
 
-  categories: (parent, args, context) => {
-    const { categories } = context;
-
-    return [...categories];
+  categories: (parent, args, { database }) => {
+    return [...database.categories];
   },
 };

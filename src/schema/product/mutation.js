@@ -1,13 +1,13 @@
 import { v4 as uuid } from "uuid";
 
 export const ProductMutation = {
-  productCreate: (parent, { data }, { products }) => {
+  productCreate: (parent, { data }, { database }) => {
     const newProduct = {
       id: uuid(),
       ...data,
     };
 
-    products.push(newProduct);
+    database.products.push(newProduct);
 
     return newProduct;
   },

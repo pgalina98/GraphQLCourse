@@ -1,14 +1,9 @@
 export const ReviewQuery = {
-  review: (parent, args, context) => {
-    const { id } = args;
-    const { reviews } = context;
-
-    return reviews.find((review) => review.id === id);
+  review: (parent, { id }, { database }) => {
+    return database.reviews.find((review) => review.id === id);
   },
 
-  reviews: (parent, args, context) => {
-    const { reviews } = context;
-
-    return [...reviews];
+  reviews: (parent, args, { database }) => {
+    return [...database.reviews];
   },
 };

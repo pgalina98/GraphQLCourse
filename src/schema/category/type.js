@@ -13,6 +13,7 @@ export const CategoryType = `
   type Mutation {
     categoryCreate(data: CategoryCreateDataInput!): Category
     categoryUpdate(data: CategoryUpdateDataInput!, where: CategoryUpdateWhereInput!): Category
+    categoryDelete(id: ID!): Boolean
   }
 
   input CategoryCreateDataInput {

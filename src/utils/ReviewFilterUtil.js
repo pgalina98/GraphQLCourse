@@ -1,5 +1,5 @@
-import { reviews } from "../data.js";
+import database from "../data.js";
 
 export const filterReviewsByProductId = (productId) => {
-  return reviews.filter((review) => review.productId === productId);
+  return database.reviews.filter((review) => review.productId === productId);
 };

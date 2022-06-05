@@ -1,20 +1,15 @@
 import { filterProductsByWhereObject } from "../../utils/ProductFilterUtil.js";
 
 export const ProductQuery = {
-  product: (parent, args, context) => {
-    const { id } = args;
-    const { products } = context;
-
-    return products.find((product) => product.id === id);
+  product: (parent, { id }, { database }) => {
+    return database.products.find((product) => product.id === id);
   },
 
-  products: (parent, { where }, context) => {
-    const { products } = context;
-
+  products: (parent, { where }, { database }) => {
     if (where) {
-      return [...filterProductsByWhereObject(products, where)];
+      return [...filterProductsByWhereObject(database.products, where)];
     }
 
-    return [...products];
+    return [...database.products];
   },
 };
