@@ -6,7 +6,7 @@ export const ProductType = `
     price: Float!
     quantity: Int!
     available: Boolean!
-    category: Category!
+    category: Category
     reviews: [Review!]
   }
 
@@ -32,7 +32,7 @@ export const ProductType = `
     price: Float!
     image: String!
     available: Boolean!
-    categoryId: ID!
+    categoryId: ID
   }
   
   input ProductUpdateDataInput {
@@ -42,7 +42,7 @@ export const ProductType = `
     price: Float!
     image: String!
     available: Boolean!
-    categoryId: ID!
+    categoryId: ID
   }
 
   input ProductUpdateWhereInput {
