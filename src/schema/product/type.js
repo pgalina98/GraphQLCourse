@@ -17,7 +17,7 @@ export const ProductType = `
 
   type Mutation {
     productCreate(input: ProductCreateDataInput!): Product
-    productUpdate(input: ProductUpdateDataInput!, where: ProductUpdateWhereInput!): Product 
+    productUpdate(where: ProductUpdateWhereInput!, input: ProductUpdateDataInput!): Product 
     productDelete(id: ID!): Boolean
   }
 
@@ -37,12 +37,12 @@ export const ProductType = `
   }
   
   input ProductUpdateDataInput {
-    name: String!
-    description: String!
-    quantity: Int!
-    price: Float!
-    image: String!
-    available: Boolean!
+    name: String
+    description: String
+    quantity: Int
+    price: Float
+    image: String
+    available: Boolean
     categoryId: ID
   }
 

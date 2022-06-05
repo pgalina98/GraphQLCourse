@@ -12,7 +12,18 @@ export const ProductMutation = {
     return newProduct;
   },
 
-  productUpdate: (parent, args, context) => {},
+  productUpdate: (parent, { where: { id }, input }, { database }) => {
+    const index = database.products.findIndex((product) => product.id === id);
+
+    const updatedProduct = {
+      ...database.products[index],
+      ...input,
+    };
+
+    database.products[index] = updatedProduct;
+
+    return updatedProduct;
+  },
 
   productDelete: (parent, { id }, { database }) => {
     database.products = database.products.filter(
