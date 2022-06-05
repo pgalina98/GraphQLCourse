@@ -22,5 +22,18 @@ export const CategoryMutation = {
     return true;
   },
 
-  categoryUpdate: (parent, args, context) => {},
+  categoryUpdate: (parent, { where: { id }, input }, { database }) => {
+    const index = database.categories.findIndex(
+      (category) => category.id === id
+    );
+
+    const updatedCategory = {
+      ...database.categories[index],
+      ...input,
+    };
+
+    database.categories[index] = updatedCategory;
+
+    return updatedCategory;
+  },
 };
