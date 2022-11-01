@@ -1,14 +1,14 @@
 import * as dotenv from "dotenv";
-import express from "express";
-import { expressMiddleware } from "@apollo/server/express4";
 import { createServer } from "http";
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
+import { ApolloServer } from "@apollo/server";
 import { WebSocketServer } from "ws";
 import { useServer } from "graphql-ws/lib/use/ws";
 import { PubSub } from "graphql-subscriptions";
-import { ApolloServer } from "@apollo/server";
-import bodyParser from "body-parser";
-import cors from "cors";
 
 import { schema } from "./src/schema/index.js";
 import database from "./src/data.js";
@@ -19,6 +19,8 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 const httpServer = createServer(app);
+
+const pubSub = new PubSub();
 
 const webSocketServer = new WebSocketServer({
   server: httpServer,
@@ -34,8 +36,6 @@ const serverCleanup = useServer(
   },
   webSocketServer
 );
-
-const pubSub = new PubSub();
 
 const server = new ApolloServer({
   schema,
