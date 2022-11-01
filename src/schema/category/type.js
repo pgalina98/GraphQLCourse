@@ -16,6 +16,10 @@ export const CategoryType = `
     categoryDelete(id: ID!): Boolean
   }
 
+  type Subscription {
+    categoryCreated: Category!
+  }
+
   input CategoryCreateDataInput {
     name: String!
   }

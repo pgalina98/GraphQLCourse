@@ -1,4 +1,6 @@
 import { gql } from "apollo-server-express";
+import { makeExecutableSchema } from "@graphql-tools/schema";
+
 import {
   ProductType,
   ProductQuery,
@@ -10,6 +12,7 @@ import {
   CategoryQuery,
   CategoryMutation,
   CategoryResolver,
+  CategorySubscription,
 } from "./category/index.js";
 import {
   ReviewType,
@@ -18,13 +21,13 @@ import {
   ReviewResolver,
 } from "./review/index.js";
 
-export const typeDefs = gql`
+const typeDefs = gql`
   ${ProductType}
   ${CategoryType}
   ${ReviewType}
 `;
 
-export const resolvers = {
+const resolvers = {
   Query: {
     ...ProductQuery,
     ...CategoryQuery,
@@ -34,6 +37,9 @@ export const resolvers = {
     ...ProductMutation,
     ...CategoryMutation,
     ...ReviewMutation,
+  },
+  Subscription: {
+    ...CategorySubscription,
   },
   Product: {
     ...ProductResolver,
@@ -45,3 +51,8 @@ export const resolvers = {
     ...ReviewResolver,
   },
 };
+
+export const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers,
+});

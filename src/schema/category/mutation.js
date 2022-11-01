@@ -1,13 +1,19 @@
 import { v4 as uuid } from "uuid";
 
 export const CategoryMutation = {
-  categoryCreate: (parent, { input: { name } }, { database }) => {
+  categoryCreate: (parent, { input: { name } }, { database, pubSub }) => {
     const newCategory = {
       id: uuid(),
       name,
     };
 
     database.categories.push(newCategory);
+
+    pubSub.publish("CATEGORY_CREATED", {
+      categoryCreated: {
+        ...newCategory,
+      },
+    });
 
     return newCategory;
   },
