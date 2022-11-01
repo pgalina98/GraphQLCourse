@@ -33,6 +33,12 @@ const serverCleanup = useServer(
     context: async () => {
       return { pubSub };
     },
+    onConnect: async (context) => {
+      console.log("⚡ User successfully connected to WebSocket Server");
+    },
+    onDisconnect: async (context) => {
+      console.log("🔗 User successfully disconnected from WebSocket Server");
+    },
   },
   webSocketServer
 );
